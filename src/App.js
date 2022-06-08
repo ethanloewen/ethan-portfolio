@@ -1,9 +1,10 @@
 import './App.css';
+import JamesBond from './components/JamesBond';
 
 function App() {
   return (
     <div>
-      <h1>Hello!</h1>
+      <JamesBond/>
     </div>
   );
 }

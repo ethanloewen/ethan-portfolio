@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './JamesBond.scss';
 import Guide from './Guide';
+import $ from 'jquery';
 
 export default function JamesBond() {
   const [circleSize, setCircleSize] = useState(50);
@@ -8,7 +9,7 @@ export default function JamesBond() {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('mousemove', handleMouse);
-  });
+  }, []);
 
   const totalComponentHeight = 1000;
 
@@ -18,15 +19,14 @@ export default function JamesBond() {
   }
 
   const handleMouse = (e) => {
-    console.log(e.clientX / window.innerWidth);
-    console.log(e.clientY / window.innerHeight);
+    const mousePosX = Math.round((e.clientX / window.innerWidth) * 1000) / 1000;
+    const mousePosY = Math.round((e.clientY / window.innerHeight) * 1000) / 1000;
 
-    console.log(
-      "Window Width", window.innerWidth,
-      "Window Height", window.innerHeight,
-      "clientX: ", e.clientX, 
-      "clientY:", e.clientY
-    )
+    const circleLocationX = `${mousePosX * 100}%`;
+    const circleLocationY = `${mousePosY * 100}vh`;
+
+    $(".circ").css("left", `${circleLocationX}`);
+    $(".circ").css("top", `${circleLocationY}`);
   }
 
   const circleStyle = {

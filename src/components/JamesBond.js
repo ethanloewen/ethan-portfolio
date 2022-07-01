@@ -4,7 +4,7 @@ import Guide from './Guide';
 import $ from 'jquery';
 
 export default function JamesBond() {
-  const [circleSize, setCircleSize] = useState(50);
+  const [circleSize, setCircleSize] = useState(0);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -34,18 +34,20 @@ export default function JamesBond() {
     $(".circ").css("left", `${circleLocationX}%`);
     $(".circ").css("top", `${circleLocationY}vh`);
 
+    const circSizeCss = $(".circ").css("min-width");
     let section = 0;
-    if (circleLocationX < 33.33) {
-      section = 1;
-      $("body").css("background-color", `#2980B9`);
-    } else if (circleLocationX < 66.66) {
-      section = 2;
-      $("body").css("background-color", `#1ABC9C`);
-    } else {
-      section = 3;
-      $("body").css("background-color", `#F1C40F`);
+    if (circSizeCss === '0px') {
+      if (circleLocationX < 33.33) {
+        section = 1;
+        $("body").css("background-color", `#2980B9`);
+      } else if (circleLocationX < 66.66) {
+        section = 2;
+        $("body").css("background-color", `#1ABC9C`);
+      } else {
+        section = 3;
+        $("body").css("background-color", `#F1C40F`);
+      }
     }
-
     // console.log('section - ', section);
   }
 

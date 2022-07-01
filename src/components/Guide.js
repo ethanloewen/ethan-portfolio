@@ -5,7 +5,9 @@ export default function Guide() {
 
   return (
     <div className='guide'>
-      <h1>Scroll to Begin</h1>
+      <h1>Hi, my name is</h1>
+      <h2>Ethan Loewen</h2>
+      <p>I'm a front-end developer from British Columbia, Canada.</p>
     </div>
   );
 }

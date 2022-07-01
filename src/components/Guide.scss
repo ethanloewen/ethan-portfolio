@@ -3,11 +3,25 @@
   padding: 0;
   position: fixed;
   margin-left: 80px;
+  z-index: 100;
+  font-family: 'Inknut Antiqua', serif;
+  color: white;
+  border: 1px solid red;
 
   h1 {
-    color: white;
     font-size: 40px;
-    font-family: 'Inknut Antiqua', serif;
     font-weight: 400;
+    margin-bottom: -80px;
+  }
+
+  h2 {
+    font-weight: 900;
+    font-size: 40px;
+    margin-bottom: -20px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 20px;
   }
 }

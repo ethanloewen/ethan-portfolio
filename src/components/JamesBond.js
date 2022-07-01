@@ -1,19 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './JamesBond.scss';
 
 export default function JamesBond() {
   const [circleSize, setCircleSize] = useState(50);
 
-  window.addEventListener('scroll', (e) => {updateCircleSize()});
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+  });
 
-  const updateCircleSize = () => {
-    if (circleSize < 200) {
-      setCircleSize(prev => prev + 1);
-      console.log(circleSize);
-    } else {
-      setCircleSize(prev => prev);
-    }
-  };
+  const totalComponentHeight = 1000;
+
+  const handleScroll = (e) => {
+    const offset = window.pageYOffset / totalComponentHeight;
+    setCircleSize(offset * 5000);
+  }
 
   const circleStyle = {
     minWidth: `${circleSize}px`,
@@ -21,9 +21,10 @@ export default function JamesBond() {
   };
 
   return (
-    <div className='james-bond'>
-      <div className='circ' style={circleStyle}></div>
-      {/* <div className='circ' style={circleStyle} onScroll={() => {console.log('scrolling')}}></div> */}
+    <div className='james-container'>
+      <div className='james-bond'>
+        <div className='circ' style={circleStyle}></div>
+      </div>
     </div>
   );
 }

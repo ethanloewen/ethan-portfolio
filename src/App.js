@@ -4,7 +4,7 @@ import JamesBond from './components/JamesBond';
 function App() {
 
   return (
-    <div>
+    <div className='app'>
       <JamesBond/>
     </div>
   );

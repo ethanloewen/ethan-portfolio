@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Guide.scss';
 
-export default function JamesBond() {
+export default function Guide() {
 
   return (
     <div className='guide'>

@@ -1,0 +1,13 @@
+.sections-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+
+  #sec-1, #sec-2, #sec-3 {
+    width: 33.33%;
+    width: calc(100% / 3);
+    height: 100%;
+    border: 1px solid white;
+  }
+}

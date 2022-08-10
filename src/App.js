@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className='app'>
-      <Guide/>
+      {/* <Guide/> */}
       <JamesBond/>
       <Sections/>
     </div>

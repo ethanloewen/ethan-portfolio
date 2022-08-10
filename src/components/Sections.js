@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Sections.scss';
+import Canvas from './Canvas';
 
 export default function Sections() {
 

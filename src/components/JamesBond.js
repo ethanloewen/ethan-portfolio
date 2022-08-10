@@ -39,13 +39,13 @@ export default function JamesBond() {
     if (circSizeCss === '0px') {
       if (circleLocationX < 33.33) {
         section = 1;
-        $("body").css("background-color", `#2980B9`);
+        $(".james-container").css("background-color", `rgba(41, 128, 185, 0.5)`);
       } else if (circleLocationX < 66.66) {
         section = 2;
-        $("body").css("background-color", `#1ABC9C`);
+        $(".james-container").css("background-color", `rgba(26, 188, 156, 0.5)`);
       } else {
         section = 3;
-        $("body").css("background-color", `#F1C40F`);
+        $(".james-container").css("background-color", `rgba(237, 179, 30, 0.5)`);
       }
     }
     // console.log('section - ', section);
